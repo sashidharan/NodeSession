@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link href="assets/style.css" type = "text/css" rel= "stylesheet"/>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js" ></script>
+    </head>
+    <body>
+        <form method="post" action="/users">
+            <p>firstname: <input type="text" name="firstname" id="firstname"/></p>
+            <p>lastname: <input type="text" name="lastname" id="lastname"/></p>
+            <input type="submit" name="submit" id="submit">
+        </form>
+        <script>
+            $.ajax({
+                type: "POST",
+                url: '/usersJson',
+                data: JSON.stringify({firstname: 'NOdejs'}),
+                dataType: 'json',
+                contentType: 'application/json'
+            })
+        </script>
+    </body>
+</html>s
